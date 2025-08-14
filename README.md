@@ -1,84 +1,87 @@
-# 🚉 Indian Railway Station Announcement System
+🎙 Indian Railway Station Announcement System
+📌 Overview
 
-A **C program** that simulates Indian Railway station announcements by taking train details, extracting digits, and playing pre-recorded audio clips to form complete announcements — just like you hear at real stations.
+This C program simulates Indian Railway station announcements by taking train details such as number, status, arrival time, and delay information, then playing corresponding pre-recorded audio clips to form complete announcements.
+It supports on-time, delayed, arrival, standing, and cancelled train scenarios, making it suitable for simulation, training, or prototype automation systems.
 
----
+✨ Features
 
-## 📌 Features
-- 🎯 **Realistic Simulation** – Recreates authentic Indian railway announcements.
-- 🔢 **Digit Extraction** – Splits train numbers into individual digits for playback.
-- ⏱ **Multiple Scenarios** – Supports on-time, delayed, cancelled, arrival, and standing status.
-- 🛠 **Modular Design** – Functions are cleanly separated for easy updates.
-- 🎵 **Audio Playback** – Plays `.wav` audio clips sequentially to form the announcement.
+1. Accepts train number, arrival status, time, and delay details.
+2. Extracts and stores individual digits of the train number for audio playback.
+3. Plays pre-recorded WAV audio clips for numbers and announcement phrases.
+4. Modular design for easy integration with real or simulated railway systems.
+5. Supports multiple statuses:
+   • 🚆 On-time arrival
+   • ⏳ Delayed arrival
+   • 🅿 Already standing at the platform
+   • ❌ Cancelled trains
 
----
+⚙ Requirements
 
-## 🖥 Requirements
-- **Windows OS** (uses `PlaySound` from `winmm.lib`)
-- **C Compiler** – GCC (MinGW) or MSVC
-- **Audio Files** – Pre-recorded `.wav` clips for digits and phrases
+• 🖥 Windows OS
+• 🛠 C Compiler (MinGW, GCC, or MSVC)
+• 📦 Windows Multimedia API (winmm.lib)
+• 🎵 Pre-recorded .wav audio files for:
+  • Digits (0–9, and full train numbers if available)
+  • Phrases ("May I have your attention please", "Thank you", etc.)
+  • Time announcements
 
----
+📂 Project Structure
 
-## 📂 Audio File Naming Convention
-| File Name         | Purpose                               |
-|-------------------|---------------------------------------|
-| `0.wav` - `9.wav` | Digits 0–9                            |
-| `arriving.wav`    | Train is arriving                     |
-| `standing.wav`    | Train is standing                     |
-| `ontime.wav`      | Train is on time                      |
-| `delayed.wav`     | Train is delayed                      |
-| `cancelled.wav`   | Train is cancelled                    |
-| *(Any custom .wav)* | Optional phrases                    |
+'''
+IndianRailwayAnnouncement/
+│-- main.c              # Main program file
+│-- Audio_Files/        # Folder containing all pre-recorded .wav files
+│-- README.md           # Project documentation
+'''
 
----
+🚀 How to Run
 
-## ⚙️ Installation & Usage
+1. Clone or download this repository
+   git clone https://github.com/yourusername/IndianRailwayAnnouncement.git
+   
+2. Place all .wav files in the Audio_Files directory with the expected filenames.
+3. Compile the program 'gcc main.c -lwinmm -o announcement.exe'
 
-### 1️⃣ Clone the repository
-```bash
-git clone https://github.com/yourusername/Train-Announcement-System.git
-cd Train-Announcement-System
-2️⃣ Place Audio Files
-Put all .wav files in an Audio_Files folder inside the project directory.
+4. Run the program 'announcement.exe'
 
-3️⃣ Compile the program
-bash
-Copy
-Edit
-gcc main.c -o announcement -lwinmm
-4️⃣ Run the program
-bash
-Copy
-Edit
-./announcement
-🔄 Program Flow Diagram
-mermaid
-Copy
-Edit
-flowchart TD
-    A[Start] --> B[Input Train Number]
-    B --> C[Extract Each Digit]
-    C --> D[Input Train Status (On-time, Delayed, Cancelled)]
-    D --> E[Input Arrival Type (Arriving / Standing)]
-    E --> F[Play Audio Clips in Sequence]
-    F --> G[End]
-🧩 Example Run
-mathematica
-Copy
-Edit
+
+🎵 Audio File Naming Convention
+
+• Numbers: 0.wav, 1.wav, 2.wav, ..., 9.wav
+• Phrases:
+  • mayihave.wav → "May I have your attention please"
+  • thankyou.wav → "Thank you"
+• Custom train numbers: 05061.wav, 12345.wav (if available)
+• Time files: HH.wav for hours, MM.wav for minutes
+
+🛠 Example Flow
+
+User Input:
+'''
+Is the train running on time? (Y/N): N
+Enter delayed hour: 1
+Enter delayed minute: 20
+Is the train arriving or standing? (A/S): A
+Enter arriving hour: 14
+Enter arriving minute: 45
 Enter train number: 05061
-Is the train on time? (Y/N): N
-Enter status (A = Arriving, S = Standing): A
-Enter delay in minutes: 15
+'''
 
-[Plays audio: "Train number" → "0" → "5" → "0" → "6" → "1" → "arriving" → "delayed by 15 minutes"]
-🚀 Future Improvements
-Multi-language audio support (Hindi, English, regional languages)
 
-Configurable audio file paths
+Program Output (Audio Sequence):
 
-Linux/macOS compatibility with alternative audio libraries
+1. "May I have your attention please"
+2. Train number announcement (e.g., "zero five zero six one")
+3. Arrival status and delay announcement
+4. Arrival time announcement
+5. "Thank you"
 
-GUI version for easier use
 
+🔮 Future Improvements
+• 🌐 Multi-language support (Hindi, English, regional languages)
+• 📡 Integration with live train status APIs
+• 🖥 Cross-platform support for Linux and macOS
+📡 Integration with live train status APIs
+
+🖥 Cross-platform support for Linux and macOS
