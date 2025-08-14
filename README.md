@@ -1,10 +1,11 @@
-🎙 Indian Train Station Announcement System
-📌 Overview
+<h1 align="center">🎙 Indian Train Station Announcement System</h1>
+
+<h3>📌 Overview</h3>
 
 This C program simulates Indian Railway station announcements by taking train details such as number, status, arrival time, and delay information, then playing corresponding pre-recorded audio clips to form complete announcements.<br>
 It supports on-time, delayed, arrival, standing, and cancelled train scenarios, making it suitable for simulation, training, or prototype automation systems.
 
-✨ Features
+<h3>✨ Features</h3>
 
 1. Accepts train number, arrival status, time, and delay details.<br>
 2. Extracts and stores individual digits of the train number for audio playback.<br>
@@ -16,7 +17,7 @@ It supports on-time, delayed, arrival, standing, and cancelled train scenarios, 
    • 🅿 Already standing at the platform<br>
    • ❌ Cancelled trains<br>
 
-⚙ Requirements
+<h3>⚙ Requirements</h3>
 
 • 🖥 Windows OS<br>
 • 🛠 C Compiler (MinGW, GCC, or MSVC)<br>
@@ -26,7 +27,7 @@ It supports on-time, delayed, arrival, standing, and cancelled train scenarios, 
   • Phrases ("May I have your attention please", "Thank you", etc.)<br>
   • Time announcements<br>
 
-📂 Project Structure
+<h3>📂 Project Structure</h3>
 
 ```
 IndianRailwayAnnouncement/
@@ -35,7 +36,7 @@ IndianRailwayAnnouncement/
 │-- README.md           # Project documentation
 ```
 
-🚀 How to Run
+<h3>🚀 How to Run</h3>
 
 1. Clone or download this repository
    `git clone https://github.com/yourusername/IndianRailwayAnnouncement.git`
@@ -45,7 +46,7 @@ IndianRailwayAnnouncement/
 4. Run the program `announcement.exe`<br>
 
 
-🎵 Audio File Naming Convention
+<h3>🎵 Audio File Naming Convention</h3>
 
 • Numbers: 0.wav, 1.wav, 2.wav, ..., 9.wav<br>
 • Phrases:<br>
@@ -54,7 +55,7 @@ IndianRailwayAnnouncement/
 • Custom train numbers: 05061.wav, 12345.wav (if available)<br>
 • Time files: HH.wav for hours, MM.wav for minutes<br>
 
-🛠 Example Flow
+<h3>🛠 Example Flow</h3>
 
 User Input:
 ```
@@ -68,7 +69,7 @@ Enter train number: 05061
 ```
 
 
-Program Output (Audio Sequence):
+<h3>Program Output (Audio Sequence):</h3>
 
 1. "May I have your attention please"<br>
 2. Train number announcement (e.g., "zero five zero six one")<br>
@@ -77,7 +78,7 @@ Program Output (Audio Sequence):
 5. "Thank you"<br>
 
 
-🔮 Future Improvements<br>
+<h3>🔮 Future Improvements<br></h3>
 • 🌐 Multi-language support (Hindi, English, regional languages)<br>
 • 📡 Integration with live train status APIs<br>
 • 🖥 Cross-platform support for Linux and macOS<br>
